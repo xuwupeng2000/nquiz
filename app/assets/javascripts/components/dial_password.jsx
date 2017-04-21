@@ -44,6 +44,10 @@ var DailPassword = React.createClass({
     });
   },
 
+  onCancel: function () {
+    this.setState({fetching: false, showKeyboard: false, pass: []});
+  },
+
   render: function() {
     var keys = (
       <div className="modal full-padding">
@@ -52,22 +56,23 @@ var DailPassword = React.createClass({
             <h3> Please enter the 4 numbers password</h3>
             {this.state.showKeyboard ? <h4> Password you typed: {this.state.pass}</h4> : null}
             <div className="row">
-              <div className="three columns"> <a className="button" onClick={this.onDail} value='1'> 1 </a> </div>
-              <div className="three columns"> <a className="button" onClick={this.onDail} value='2'> 2 </a> </div>
-              <div className="three columns"> <a className="button" onClick={this.onDail} value='3'> 3 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail} value='1'> 1 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail} value='2'> 2 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail} value='3'> 3 </a> </div>
             </div>
             <div className="row">
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 4 </a> </div>
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 5 </a> </div>
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 6 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 4 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 5 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 6 </a> </div>
             </div>
             <div className="row">
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 7 </a> </div>
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 8 </a> </div>
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 9 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 7 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 8 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 9 </a> </div>
             </div>
             <div className="row">
-              <div className="three columns"> <a className="button" onClick={this.onDail}> 0 </a> </div>
+              <div className="one columns"> <a className="button button-primary" onClick={this.onDail}> 0 </a> </div>
+              <div className="one columns"> <a className="button" onClick={this.onCancel}> Cancel </a> </div>
             </div>
           </div>
         </div>
@@ -76,7 +81,7 @@ var DailPassword = React.createClass({
 
     return (
       <div>
-        <a className="button" onClick={this.openKeyboard}> Select this team </a>
+        <a className="button button-primary" onClick={this.openKeyboard}> Select this team </a>
         {this.state.showKeyboard ? keys : null}
       </div>
     );
