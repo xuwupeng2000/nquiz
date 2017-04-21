@@ -9,15 +9,26 @@
   </head>
 
   <body>
-      <nav class="navbar">
-        <div class="container">
-          <ul class="navbar-list">
-            <li class="navbar-item"><a class="navbar-link" href=" <%= teams_path %>"> Home </a></li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href=" <%= teams_path %>"> Home </a></li>
+        </ul>
+      </div>
+    </nav>
+
 
     <div class="container">
+        <% if flash[:notice] %>
+          <div class="row full-padding">
+            <div class="notice"><%= flash[:notice] %></div>
+          </div>
+        <% end %>
+        <%if flash[:error]  %>
+          <div class="row full-padding">
+            <div class="errors"><%= flash[:error] %></div>
+          </div>
+        <% end %>
       <%= yield %>
     </div>
   </body>

@@ -12,7 +12,10 @@
       <h3> <%= t.name %> </h3>
       <p> <%= t.description %> </p>
 
-      <%= react_component("DailPassword", {}) %>
+      <%= react_component("DailPassword", {
+        team_id: t.id,
+        auth_url: auth_path
+      }) %>
     </div>
     <hr>
   </div>

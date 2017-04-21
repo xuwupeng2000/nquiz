@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @team.update!(team_params)
 
-    redirect_to @team
+    redirect_to team_quiz_sessions_path(@team)
   end
 
   def destroy

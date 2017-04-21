@@ -1,5 +1,8 @@
 .errors {
+  border: 1px solid red;
   color: red;
+  padding: 25px;
+  margin-bottom: 25px;
 }
 
 .modal {
@@ -21,4 +24,8 @@
   padding: 20px;
   border: 1px solid #888;
   width: 75%; /* Could be more or less, depending on screen size */
+}
+
+.full-padding {
+  padding: 10px;
 }

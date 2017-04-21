@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :quiz_sessions, only: [:index, :new, :create, :destroy]
   end
 
+  resource :auth, only: [:create] 
+
   root to: "teams#index"
 end
