@@ -45,7 +45,9 @@ class QuizSessionsController < ApplicationController
   end
 
   def require_team_session
-    if session[:team]
+    team = session[:team]
+    @team = Team.find(params[:team_id])
+    if session[:team] && session[:team]['pass'] == @team.pass 
     else
       flash[:error] = "Can not let you do that !"
       redirect_to root_path and return

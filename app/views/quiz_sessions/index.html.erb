@@ -1,22 +1,16 @@
 <div class="row">
-  <div class="two columns">
-    <%= link_to "Edit team details", edit_team_path(@team), class: 'button'  %>
-  </div>
-  <div class="four columns">
-    .
-  </div>
-  <div class="two columns">
-    <%= link_to "Add new record", new_team_quiz_session_path(@team), class: 'button'%>
-  </div>
-</div>
-
-<div class="row">
   <div class="team-row"> 
     <h3>
       <%= @team.name %> 
     </h3>
   </div>
+  <div class="row">
+      <%= link_to "Edit team details", edit_team_path(@team), class: 'button'  %>
+      <%= link_to "Add new record", new_team_quiz_session_path(@team), class: 'button'%>
+  </div>
+
   <hr>
+
   <div>
     <p> What we have done so far ...</p>
     <div class="row">
