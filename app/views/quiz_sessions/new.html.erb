@@ -1,32 +1,28 @@
-<div class="row">
-  <div class="ten columns"> <%= Date.today %> </div>
-
-  <div class="two columns">
+<div class="columns">
+  <div class="column is-offset-10">
     <%= link_to "Go back to records history", team_quiz_sessions_path(@team), class: 'button'%>
   </div>
 </div>
 
-<div class="navbar-spacer"></div>
-
-<div class="row">
-  <div class="two columns">
-  </div>
-  <div class="ten columns">
+<div class="columns">
+  <div class="column">
     <%= form_for @session, url: team_quiz_sessions_path(@team) do |f| %>
       <% if @session.errors.any? %>
-        <div class="row errors">
+        <div class="column notification is-danger">
           <%= @session.errors.full_messages.to_sentence %>
         </div>
       <% end %>
 
-      <div class="row">
-          <label for=""> Total:</label> <%= f.text_field :total_quiz_number %>
+      <div class="column">
+          <label class="label"> Total:</label> <%= f.text_field :total_quiz_number, class: 'input' %>
       </div>
-      <div class="row">
-          <label for=""> Corrent:</label> <%= f.text_field :correct_quiz_number %>
+      <div class="column">
+          <label class="label"> Corrent:</label> <%= f.text_field :correct_quiz_number, class: 'input' %>
       </div>
 
-      <%= f.submit "Save !" %>
+      <div class="column">
+        <%= f.submit "Save !", class: 'button' %>
+      </div>
     <% end %>
   </div>
 </div>

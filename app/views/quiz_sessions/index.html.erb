@@ -1,34 +1,38 @@
-<div class="row">
-  <div class="row">
-    <%= link_to "Add new record", new_team_quiz_session_path(@team), class: 'button-primary button'%>
-    <%= link_to "Edit team details", edit_team_path(@team), class: 'button'  %>
+<div class="columns">
+  <div class="column">
+    <div class="field is-grouped pull-right">
+      <%= link_to "Add new record", new_team_quiz_session_path(@team), class: 'button is-info is-outlined'%>
+      <%= link_to "Edit team details", edit_team_path(@team), class: 'button is-info is-outlined'  %>
+    </div>
   </div>
+</div>
 
-  <div>
-    <div class="row">
-      <h3> Overall accuracy </h3>
-      <%= react_component("PieChart", {series: @series}) %>
-    </div>
+<div class="columns">
+  <div class="column">
+    <h3 class="title"> Overall accuracy </h3>
+    <%= react_component("PieChart", {series: @series}) %>
+  </div>
+</div>
 
-    <div class="row">
-      <h3> History </h3>
-      <table class="u-full-width">
-        <tr> 
-          <td> When </td> 
-          <td> Score </td> 
-          <td> Accuracy </td> 
-          <td></td> 
-        </tr> 
-        <% @sessions.each do |s| %>
-        <tr>
-          <td> <%= s.created_at.strftime('%F') %></td>
-          <td> <%= s.correct_quiz_number %> / <%= s.total_quiz_number %></td>
-          <td> <%= number_to_percentage((s.correct_quiz_number.to_f/s.total_quiz_number.to_f) * 100 )%> </td>
-          <td></td>
-          <td> <%= link_to "Delete", team_quiz_session_path(@team, s), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
+<div class="columns">
+  <div class="column">
+    <h3 class="title"> History </h3>
+    <table class="table">
+      <tr> 
+        <td> When </td> 
+        <td> Score </td> 
+        <td> Accuracy </td> 
+        <td></td> 
+      </tr> 
+      <% @sessions.each do |s| %>
+      <tr>
+        <td> <%= s.created_at.strftime('%F') %></td>
+        <td> <%= s.correct_quiz_number %> / <%= s.total_quiz_number %></td>
+        <td> <%= number_to_percentage((s.correct_quiz_number.to_f/s.total_quiz_number.to_f) * 100 )%> </td>
+        <td></td>
+        <td> <%= link_to "Delete", team_quiz_session_path(@team, s), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+      </tr>
+      <% end %>
+    </table>
   </div>
 </div>

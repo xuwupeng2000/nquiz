@@ -9,30 +9,26 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href=" <%= teams_path %>"> Home </a></li>
-          <% if @team and @team.id  %>
-            <li class="navbar-item"><a class="navbar-link" href=" <%= edit_team_path(@team) %>"> <%= @team.name  %>  </a></li>
-          <% end %>
-        </ul>
+    <nav class="nav">
+      <div class="nav-center nav-menu">
+        <a class="nav-item" href="<%= teams_path %>"> Home </a>
       </div>
     </nav>
 
-
-    <div class="container">
+    <div class="columns">
+      <div class="column">
         <% if flash[:notice] %>
-          <div class="row full-padding">
-            <div class="notice"><%= flash[:notice] %></div>
-          </div>
+          <div class="notification"><%= flash[:notice] %></div>
         <% end %>
         <%if flash[:error]  %>
-          <div class="row full-padding">
-            <div class="errors"><%= flash[:error] %></div>
-          </div>
+          <div class="notification is-dange"><%= flash[:error] %></div>
         <% end %>
+      </div>
+    </div>
+
+    <div class="container is-fluid">
       <%= yield %>
     </div>
   </body>
+
 </html>
