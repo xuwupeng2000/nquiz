@@ -9,11 +9,10 @@
 <% @teams.each do |t| %>
   <div class="row">
     <div class="team-row"> 
-      <h3>
-        <%= t.name %> 
-      </h3>
+      <h3> <%= t.name %> </h3>
       <p> <%= t.description %> </p>
-      <%= link_to "Select this team", team_quiz_sessions_path(t), class: 'button'%>
+
+      <%= react_component("DailPassword", {}) %>
     </div>
     <hr>
   </div>
