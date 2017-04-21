@@ -15,15 +15,30 @@
   <hr>
   <div>
     <p> What we have done so far ...</p>
-    <table>
-      <tr> <td> When </td> <td> Score </td> <td> Rate </td> </tr> 
-      <% @sessions.each do |s| %>
-      <tr>
-        <td> <%= s.created_at.humanize %></td>
-        <td> <%= s.correct_quiz_number %> / <%= s.total_quiz_number %></td>
-        <td> <%= ( s.correct_quiz_number/s.total_quiz_number ) %></td>
-      </tr>
-      <% end %>
-    </table>
+    <div class="row">
+      <h3> Overall accuracy </h3>
+      <p> <%= @overall_accuracy %> </p>
+    </div>
+
+    <div>
+      <h3> History </h3>
+      <table>
+        <tr> 
+          <td> When </td> 
+          <td> Score </td> 
+          <td> Accuracy </td> 
+          <td></td> 
+        </tr> 
+        <% @sessions.each do |s| %>
+        <tr>
+          <td> <%= s.created_at.strftime('%F') %></td>
+          <td> <%= s.correct_quiz_number %> / <%= s.total_quiz_number %></td>
+          <td> <%= number_to_percentage((s.correct_quiz_number.to_f/s.total_quiz_number.to_f) * 100 )%> </td>
+          <td></td>
+          <td> <%= link_to "Delete", team_quiz_session_path(@team, s), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>

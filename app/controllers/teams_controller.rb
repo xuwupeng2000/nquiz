@@ -6,9 +6,12 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    @team.save!
 
-    redirect_to teams_path
+    if @team.save
+      redirect_to teams_path
+    else
+      render :new
+    end
   end
 
   def new
@@ -26,9 +29,11 @@ class TeamsController < ApplicationController
     redirect_to @team
   end
 
-  def destory
+  def destroy
     @team = Team.find(params[:id])
-    @team.destory!
+    @team.destroy!
+
+    redirect_to action: :index
   end
 
   private

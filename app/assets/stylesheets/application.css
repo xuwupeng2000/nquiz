@@ -14,5 +14,6 @@
  *= require skeleton
  *= require customized
  *= require base
+ *= require misc
  *= require_self
  */
