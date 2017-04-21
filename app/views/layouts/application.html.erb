@@ -14,7 +14,7 @@
         <ul class="navbar-list">
           <li class="navbar-item"><a class="navbar-link" href=" <%= teams_path %>"> Home </a></li>
           <% if @team and @team.id  %>
-            <li class="navbar-item"><a class="navbar-link" href=" <%= team_path(@team) %>"> <%= @team.name  %>  </a></li>
+            <li class="navbar-item"><a class="navbar-link" href=" <%= edit_team_path(@team) %>"> <%= @team.name  %>  </a></li>
           <% end %>
         </ul>
       </div>
