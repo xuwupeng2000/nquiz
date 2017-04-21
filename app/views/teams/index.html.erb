@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="ten columns"> <%= Date.today %> </div>
+
+  <div class="two columns">
+    <%= link_to "Start a new team", new_team_path, class: 'button'%>
+  </div>
+</div>
+
+<% @teams.each do |t| %>
+  <div class="row">
+    <div class="team-row"> 
+      <h3>
+        <%= t.name %> 
+      </h3>
+      <p> <%= t.description %> </p>
+      <%= link_to "Select this team", team_quiz_sessions_path(t), class: 'button'%>
+    </div>
+    <hr>
+  </div>
+<% end %>

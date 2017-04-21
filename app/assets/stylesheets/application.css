@@ -11,5 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require skeleton
+ *= require customized
+ *= require base
  *= require_self
  */

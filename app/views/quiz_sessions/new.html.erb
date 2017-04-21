@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="ten columns"> <%= Date.today %> </div>
+
+  <div class="two columns">
+    <%= link_to "Go back to records history", team_quiz_sessions_path(@team), class: 'button'%>
+  </div>
+</div>
+
+<div class="navbar-spacer"></div>
+
+<div class="row">
+  <div class="two columns">
+  </div>
+  <div class="ten columns">
+    <%= form_for @session, url: team_quiz_sessions_path(@team) do |f| %>
+      <div class="row">
+          <label for=""> Total:</label> <%= f.text_field :total_quiz_number %>
+      </div>
+      <div class="row">
+          <label for=""> Corrent:</label> <%= f.text_field :correct_quiz_number %>
+      </div>
+
+      <%= f.submit "Save !" %>
+    <% end %>
+  </div>
+</div>

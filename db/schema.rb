@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 20170421033737) do
   create_table "quiz_sessions", force: :cascade do |t|
     t.integer  "total_quiz_number"
     t.integer  "correct_quiz_number"
+    t.integer  "team_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.index ["team_id"], name: "index_quiz_sessions_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
