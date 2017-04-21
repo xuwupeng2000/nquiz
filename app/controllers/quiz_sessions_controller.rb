@@ -18,7 +18,7 @@ class QuizSessionsController < ApplicationController
 
   def new
     @team = Team.find(params[:team_id])
-    @session = @team.quiz_sessions.build
+    @session = @team.quiz_sessions.build(total_quiz_number: 15)
   end
 
   def create
