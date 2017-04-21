@@ -17,8 +17,7 @@
     <p> What we have done so far ...</p>
     <div class="row">
       <h3> Overall accuracy </h3>
-      <p> <%= @overall_accuracy %> </p>
-      <div id="team-pie-chart"> </div>
+      <%= react_component("PieChart", {series: @series}) %>
     </div>
 
     <div>

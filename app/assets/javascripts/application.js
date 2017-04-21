@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require zingchart-pie3d.min
+//= require zingchart.min
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

@@ -5,7 +5,8 @@ class QuizSessionsController < ApplicationController
     @sessions = QuizSession.where(team: params[:team_id]).all
     total = @sessions.map{|e| e.correct_quiz_number.to_f/e.total_quiz_number.to_f}
       .reduce(:+)
-    @overall_accuracy = total/@sessions.size
+    overall_accuracy = (total/@sessions.size).to_f.round(2)
+    @series = [ {"values":[overall_accuracy * 100], "text":"Correct #{overall_accuracy}"}, {"values":[( 1 - overall_accuracy ) * 100], "text": "Incorrect #{(1 - overall_accuracy).round(2)}"} ]
   end
 
   def new
