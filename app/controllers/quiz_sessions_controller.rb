@@ -36,6 +36,8 @@ class QuizSessionsController < ApplicationController
     @team = Team.find(params[:team_id])
     @session = @team.quiz_sessions.find(params[:id])
     @session.destroy!
+
+    redirect_to action: :index
   end
 
   private
