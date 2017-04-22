@@ -31,7 +31,7 @@ class Team < ApplicationRecord
     if pass_number
       errors.add(:base, 'Passwod is like bank pass, 4 numbers') unless pass_number.size == 4
       pass_number.each_char do |number|
-        errors.add(:base, 'Passwod is like bank pass, 4 numbers, numbers!') unless range.include? number
+        errors.add(:base, 'Passwod is like bank pass, you should only enter numbers!') unless range.include? number
       end
     end
   end
