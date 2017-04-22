@@ -18,7 +18,7 @@ class Team < ApplicationRecord
   def password=(new_password)
     self.pass_number = new_password
     password = Password.create(new_password)
-    self.pass = Password.create(new_password)
+    self.pass = password
   end
 
   private
