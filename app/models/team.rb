@@ -12,13 +12,12 @@ class Team < ApplicationRecord
   attr_accessor :pass_number
 
   def password
-    password ||= Password.new(pass)
+    Password.new(pass)
   end
 
   def password=(new_password)
     self.pass_number = new_password
-    password = Password.create(new_password)
-    self.pass = password
+    self.pass = Password.create(new_password)
   end
 
   private
