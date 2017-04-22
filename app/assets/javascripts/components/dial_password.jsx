@@ -55,10 +55,10 @@ var DailPassword = React.createClass({
           <div className="modal-background"></div>
           <div className="modal-content box">
 
-            <div className="columns">
+            <div className="columns notification">
               <h3> Please enter the 4 numbers password</h3>
             </div>
-            <div className="columns">
+            <div className="columns notification">
               {this.state.showKeyboard ? <h4> Password you typed: {this.state.pass}</h4> : null}
             </div>
 

@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(team_params)
+    @team = Team.new(name: team_params[:name], description: team_params[:description], password: team_params[:pass_number])
 
     if @team.save
       redirect_to teams_path
@@ -25,7 +25,7 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
 
-    if @team.update(team_params)
+    if @team.update(name: team_params[:name], description: team_params[:description], password: team_params[:password])
       redirect_to team_quiz_sessions_path(@team)
     else
       render :edit

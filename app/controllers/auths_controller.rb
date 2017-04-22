@@ -4,7 +4,7 @@ class AuthsController < ApplicationController
   def create
     @team = Team.find(params[:team_id])
 
-    if @team.pass == params[:pass].join
+    if @team.password == params[:pass].join
       @url = team_quiz_sessions_path(@team)
       session[:team] = @team 
       render :create, status: 200

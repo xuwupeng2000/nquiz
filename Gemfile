@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "react-rails"
+gem 'bcrypt'
 
 group :development, :test do
   gem 'pry-rails'
