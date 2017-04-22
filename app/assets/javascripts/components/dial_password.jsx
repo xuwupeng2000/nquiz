@@ -64,8 +64,8 @@ var DailPassword = React.createClass({
 
             <div className="columns">
               <div className="column button is-large dail" onClick={this.onDail} value='1'> 1 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='2'> 3 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='3'> 2 </div>
+              <div className="column button is-large dail" onClick={this.onDail} value='2'> 2 </div>
+              <div className="column button is-large dail" onClick={this.onDail} value='3'> 3 </div>
             </div>
             <div className="columns">
               <div className="column button is-large dail" onClick={this.onDail} value='4'> 4 </div>
