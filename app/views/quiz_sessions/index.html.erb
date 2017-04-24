@@ -7,10 +7,16 @@
   </div>
 </div>
 
+<% if @sessions.any? %>
 <div class="columns">
   <div class="column">
     <h3 class="title"> Overall accuracy </h3>
-    <%= react_component("PieChart", {series: @series}) %>
+    <%= react_component("PieChart", {series: @pie_series}) %>
+    <%= react_component("BarChart", {series: @bar_series}) %>
+  </div>
+</div>
+<div class="columns">
+  <div class="column">
   </div>
 </div>
 
@@ -36,3 +42,11 @@
     </table>
   </div>
 </div>
+<% else %>
+<div class="columns">
+  <div class="column">
+    <p class="box"> Start to add record</p>
+  </div>
+</div>
+<% end %>
+

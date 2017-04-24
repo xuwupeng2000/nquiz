@@ -9,9 +9,10 @@ class QuizSessionsController < ApplicationController
       total = @sessions.map{|e| e.correct_quiz_number.to_f/e.total_quiz_number.to_f}
         .reduce(:+)
       overall_accuracy = (total/@sessions.size).to_f.round(2)
-      @series = [ {"values":[overall_accuracy * 100], "text":"Correct #{overall_accuracy}"}, {"values":[( 1 - overall_accuracy ) * 100], "text": "Incorrect #{(1 - overall_accuracy).round(2)}"} ]
+      @pie_series = [ {"values":[overall_accuracy * 100], "text":"Correct #{overall_accuracy}"}, {"values":[( 1 - overall_accuracy ) * 100], "text": "Incorrect #{(1 - overall_accuracy).round(2)}"} ]
+      @bar_series = @sessions.map{|e| {value: ( e.correct_quiz_number.to_f/e.total_quiz_number.to_f ).round(2), happened_at: e.created_at.strftime('%F')}}
+                             .map{|h| { values: [ h[:value] * 100 ], text: h[:happened_at] }}
     else
-      @series =[]
     end
 
   end
