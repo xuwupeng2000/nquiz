@@ -8,15 +8,16 @@
 </div>
 
 <% if @sessions.any? %>
-<div class="columns">
-  <div class="column">
+<div class="columns is-mobile">
+  <div class="column is-offset-1">
     <h3 class="title"> Overall accuracy </h3>
     <%= react_component("PieChart", {series: @pie_series}) %>
-    <%= react_component("BarChart", {series: @bar_series}) %>
   </div>
 </div>
-<div class="columns">
-  <div class="column">
+
+<div class="columns is-mobile">
+  <div class="column is-offset-1">
+    <%= react_component("BarChart", {series: @bar_series}) %>
   </div>
 </div>
 
