@@ -62,22 +62,22 @@ var DailPassword = React.createClass({
               {this.state.showKeyboard ? <h4> Password you typed: {this.state.pass}</h4> : null}
             </div>
 
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='1'> 1 </div>
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='2'> 2 </div>
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='3'> 3 </div>
             </div>
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='4'> 4 </div>
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='5'> 5 </div>
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='6'> 6 </div>
             </div>
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='7'> 7 </div>
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='8'> 8 </div>
               <div className="column is-one-third button is-large dail" onClick={this.onDail} value='9'> 9 </div>
             </div>
-            <div className="columns">
+            <div className="columns is-mobile">
               <div className="column is-half button is-large dail" onClick={this.onDail} value='0'> 0 </div>
               <div className="column is-half button is-large dail" onClick={this.onCancel}> Cancel </div>
             </div>
