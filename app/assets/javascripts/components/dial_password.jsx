@@ -49,7 +49,7 @@ var DailPassword = React.createClass({
   },
 
   render: function() {
-    var keys = (
+    var keyboard = (
       <div className="">
         <div className="modal is-active">
           <div className="modal-background"></div>
@@ -63,23 +63,23 @@ var DailPassword = React.createClass({
             </div>
 
             <div className="columns">
-              <div className="column button is-large dail" onClick={this.onDail} value='1'> 1 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='2'> 2 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='3'> 3 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='1'> 1 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='2'> 2 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='3'> 3 </div>
             </div>
             <div className="columns">
-              <div className="column button is-large dail" onClick={this.onDail} value='4'> 4 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='5'> 5 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='6'> 6 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='4'> 4 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='5'> 5 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='6'> 6 </div>
             </div>
             <div className="columns">
-              <div className="column button is-large dail" onClick={this.onDail} value='7'> 7 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='8'> 8 </div>
-              <div className="column button is-large dail" onClick={this.onDail} value='9'> 9 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='7'> 7 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='8'> 8 </div>
+              <div className="column is-one-third button is-large dail" onClick={this.onDail} value='9'> 9 </div>
             </div>
             <div className="columns">
-              <div className="column button is-large dail" onClick={this.onDail} value='0'> 0 </div>
-              <div className="column button is-large dail" onClick={this.onCancel}> Cancel </div>
+              <div className="column is-half button is-large dail" onClick={this.onDail} value='0'> 0 </div>
+              <div className="column is-half button is-large dail" onClick={this.onCancel}> Cancel </div>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ var DailPassword = React.createClass({
     return (
       <div>
         <a className="button is-info is-outlined" onClick={this.openKeyboard}> Select this team </a>
-        {this.state.showKeyboard ? keys : null}
+        {this.state.showKeyboard ? keyboard : null}
       </div>
     );
   }
